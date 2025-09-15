@@ -43,9 +43,10 @@ const VerifyEmailMsg = () => {
       try {
         if (userId && secret) {
           const userData = await appwriteGetUserData();
+          console.log(userData);
           const email = userData?.email;
           const password = userData?.password;
-          
+          console.log(email);
           const verifyResult = await appwriteUpdateVerification({
             userId,
             secret,
