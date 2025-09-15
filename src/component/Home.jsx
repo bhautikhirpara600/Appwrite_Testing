@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <main className="bg-orange-100 h-screen">
         <h1 className="text-center text-3xl font-bold p-4">Home Page</h1>
-        <div className="w-200 mx-auto">
+        <div className="max-w-200 px-2 mx-auto">
           <img
             className="w-full"
             src="https://m.media-amazon.com/images/I/71u4fU6AWEL._SL1500_.jpg"
