@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
+  appwriteGetUserData,
   appwriteUpdateVerification,
   appwriteVerifyEmail,
 } from "../service/appwrite";
@@ -41,9 +42,15 @@ const VerifyEmailMsg = () => {
 
       try {
         if (userId && secret) {
+          const userData = await appwriteGetUserData();
+          const email = userData?.email;
+          const password = userData?.password;
+          
           const verifyResult = await appwriteUpdateVerification({
             userId,
             secret,
+            email,
+            password,
           });
 
           if (verifyResult?.userId) {
