@@ -83,19 +83,12 @@ export const appwriteVerifyEmail = async () => {
   }
 };
 
-export const appwriteUpdateVerification = async ({
-  userId,
-  secret,
-  email,
-  password,
-}) => {
+export const appwriteUpdateVerification = async ({ userId, secret }) => {
   try {
     const promise = await account.updateVerification({
       userId,
       secret,
     });
-
-    await appwriteLogIn({ email, password });
     // console.log("Email Verification SuccessFully...!");
     return promise;
   } catch (error) {
