@@ -25,7 +25,7 @@ const Login = () => {
     const func = async () => {
       try {
         const result = await appwriteLogIn(logInData);
-        
+
         if (result?.error) {
           setErrorMsg(result.message || "Login failed. Please try again.");
         } else {
@@ -84,9 +84,9 @@ const Login = () => {
         </button>
         <p
           onClick={() => navigate("/signup")}
-          className="text-blue-800 font-semibold cursor-pointer"
+          className="font-semibold cursor-pointer"
         >
-          No account? Register now
+          No account? <span className="text-blue-800">Sign Up</span>
         </p>
       </form>
     </section>
